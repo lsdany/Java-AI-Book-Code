@@ -12,7 +12,10 @@ package search.maze;
  * 2. Apache 2
  * <p/>
  */
+
 public class BreadthFirstSearchEngine extends AbstractSearchEngine {
+
+
     public BreadthFirstSearchEngine(int width, int height) {
         super(width, height);
         doSearchOn2DGrid();

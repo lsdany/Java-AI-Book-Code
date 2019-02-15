@@ -27,7 +27,7 @@ import java.util.List;
  * 2. Apache 2
  * <p/>
  */
-public class ExtractNames {
+public class ExtractNamesTemp {
     /**
      *        Facade method: get all place and human names from a text string
      * @param words
@@ -223,7 +223,7 @@ public class ExtractNames {
     /**
      * 
      */
-    public ExtractNames() {
+    public ExtractNamesTemp() {
         this("test_data/propername.ser");
     }
 
@@ -231,7 +231,7 @@ public class ExtractNames {
      * 
      * @param dataPath
      */
-    public ExtractNames(String dataPath) {
+    public ExtractNamesTemp(String dataPath) {
         if (lastNameHash != null) return; // static data already loaded
         try {
             InputStream ins =

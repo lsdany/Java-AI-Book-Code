@@ -43,8 +43,13 @@ import nlp.com.knowledgebooks.nlp.ExtractNames;
  * This software is not public domain. It can be legally
  * used under the following licenses: LGPL version 3 or Apache 2
  * <p/>
+ *
+ * Luisdany Pernillo
+ * Modify to compile entire project
+ *
+ *
  */
-public class NameFinder extends Configured implements Tool {
+public class NameFinderTemp extends Configured implements Tool {
 
     private static ExtractNames extractNames = new ExtractNames();
 

@@ -45,7 +45,7 @@ public class MazeDepthFirstSearch extends javax.swing.JFrame {
         for (int x=0; x<width; x++) {
             for (int y=0; y<height; y++) {
                 short val = maze.getValue(x,y);
-                if ( val == Maze.OBSTICLE) {
+                if ( val == Maze.OBSTACLE) {
                     g2.setColor(Color.lightGray);
                     g2.fillRect(6 + x * 29, 3 + y * 29, 29, 29);
                     g2.setColor(Color.black);

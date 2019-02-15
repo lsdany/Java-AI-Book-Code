@@ -24,14 +24,17 @@ public class MazeBreadthFirstSearch extends javax.swing.JFrame {
         try {
           jbInit();
         } catch (Exception e) {
-          System.out.println("GUI initilization error: " + e);
+          System.out.println("GUI initialization error: " + e);
         }
         currentSearchEngine = new BreadthFirstSearchEngine(10, 10);
         repaint();
     }
 
+    @Override
     public void paint(Graphics g_unused) {
-        if (currentSearchEngine == null) return;
+        if (currentSearchEngine == null)
+            return;
+
         Maze maze = currentSearchEngine.getMaze();
         int width = maze.getWidth();
         int height = maze.getHeight();
@@ -47,7 +50,7 @@ public class MazeBreadthFirstSearch extends javax.swing.JFrame {
             for (int y=0; y<height; y++) {
                 short val = maze.getValue(x,y);
                 
-                if ( val == Maze.OBSTICLE) {
+                if ( val == Maze.OBSTACLE) {
                     g2.setColor(Color.lightGray);
                     g2.fillRect(6 + x * 29, 3 + y * 29, 29, 29);
                     g2.setColor(Color.black);

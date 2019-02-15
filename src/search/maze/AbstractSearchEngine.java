@@ -13,11 +13,7 @@ package search.maze;
  * <p/>
  */
 public class AbstractSearchEngine {
-    public AbstractSearchEngine(int width, int height) {
-        maze = new Maze(width, height);
-        initSearch();
-    }
-    public Maze getMaze() { return maze; }
+
     protected Maze maze;
     /**
      * We will use the Java type Location (fields width and height will
@@ -43,6 +39,14 @@ public class AbstractSearchEngine {
         searchPath[pathCount++] = currentLoc;
     }
 
+    public AbstractSearchEngine(int width, int height) {
+        maze = new Maze(width, height);
+        initSearch();
+    }
+    public Maze getMaze() {
+        return maze;
+    }
+
     protected boolean equals(Location d1, Location d2) {
         return d1.x == d2.x && d1.y == d2.y;
     }
@@ -54,8 +58,10 @@ public class AbstractSearchEngine {
       }
       return ret;
     }
+
     protected Location [] getPossibleMoves(Location loc) {
-        Location tempMoves [] = new Location[4];
+
+        Location[] tempMoves  = new Location[4];
         tempMoves[0] = tempMoves[1] = tempMoves[2] = tempMoves[3] = null;
         int x = loc.x;
         int y = loc.y;

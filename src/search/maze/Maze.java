@@ -4,19 +4,22 @@ package search.maze;
  * Class Maze - class for representing search space as a two-Locational maze
  */
 public class Maze {
-    public static short OBSTICLE = -1;
+
+    public static short OBSTACLE = -1;
     public static short START_LOC_VALUE = -2;
     public static short GOAL_LOC_VALUE = -3;
     private int width = 0;
     private int height = 0;
     public Location startLoc = new Location();
     public Location goalLoc  = new Location();
+
     /**
      * The maze (or search space) data is stored as a short integer rather than
      * as a boolean so that bread-first style searches can use the array to store
      * search depth. A value of -1 indicates a barrier in the maze.
      */
     private short [][]maze;
+
     public Maze(int width, int height) {
         System.out.println("New maze of size " + width + " by " + height);
         this.width = width;
@@ -28,10 +31,10 @@ public class Maze {
             }
         }
         for (int i=0; i<height+2; i++) {
-            maze[0][i] = maze[width+1][i] = OBSTICLE;
+            maze[0][i] = maze[width+1][i] = OBSTACLE;
         }
         for (int i=0; i<width+2; i++) {
-            maze[i][0] = maze[i][height+1] = OBSTICLE;
+            maze[i][0] = maze[i][height+1] = OBSTACLE;
         }
         /**
          * Randomize the maze by putting up arbitray obsticals
@@ -40,7 +43,7 @@ public class Maze {
         for (int i=0; i<max_obsticles; i++) {
             int x = (int)(Math.random()*width);
             int y = (int)(Math.random()*height);
-            setValue(x, y, OBSTICLE);
+            setValue(x, y, OBSTACLE);
         }
         /**
          * Specify the starting location
@@ -55,8 +58,20 @@ public class Maze {
         goalLoc.y = height - 1;
         setValue(width - 1, height - 1, GOAL_LOC_VALUE);
     }
-    synchronized public short getValue(int x, int y) { return maze[x+1][y+1]; }
-    synchronized public void setValue(int x, int y, short value) { maze[x+1][y+1] = value; }
-    public int getWidth() { return width; }
-    public int getHeight() { return height; }
+
+    synchronized public short getValue(int x, int y) {
+        return maze[x+1][y+1];
+    }
+
+    synchronized public void setValue(int x, int y, short value) {
+        maze[x+1][y+1] = value;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
 }

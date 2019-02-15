@@ -16,11 +16,11 @@ import java.util.List;
  * <p/>
  * see www.knowledgebooks.com for details
  */
-public class ScoredList {
+public class ScoredListTemp {
     public List<String> strings = new ArrayList<String>();
     private List<Integer> scores = new ArrayList<Integer>();
     private int max_to_keep = 9999999;
-    public ScoredList(int max_to_keep) {
+    public ScoredListTemp(int max_to_keep) {
         this.max_to_keep = max_to_keep;
     }
 
@@ -28,7 +28,7 @@ public class ScoredList {
      * Create an empty scored list
      *
      */
-    public ScoredList() { }
+    public ScoredListTemp() { }
 
     /**
      * Add a value to a scored list
